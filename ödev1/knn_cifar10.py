@@ -7,11 +7,7 @@ import tarfile
 import pickle
 
 class KNearestNeighbor:
-    """
-    K-En Yakın Komşu (K-NN) Sınıflandırıcısı.
-    Bu sınıf AÇIK MATEMATİKSEL işlemlere (L2-Öklid uzaklık denklemleri üzerinden)
-    dayalı olarak hesaplama yapar ve sınıflandırma gerçekleştirir.
-    """
+   
     def __init__(self):
         self.X_train = None
         self.y_train = None
@@ -22,16 +18,7 @@ class KNearestNeighbor:
         self.y_train = y
 
     def compute_distances(self, X):
-        """
-        AÇIK MATEMATİKSEL İŞLEM: (L2 - Öklid Uzaklığı)
-        İki vektör (x ve y) arasındaki Öklid uzaklığının karesi cebirsel olarak şöyledir:
-        d^2(x, y) = (x - y)^2 = x^2 + y^2 - 2xy
         
-        Döngü (for) kullanmak tüm veri setinde çok uzun sürer.
-        O yüzden bu temel matematiksel denklemi açık matris hesabına çevirdik:
-        d^2 = sum(X^2) + sum(X_train^2) - 2 * (X dot X_train^T)
-        Son olarak karekökünü alıyoruz: d = sqrt(d^2)
-        """
         num_test = X.shape[0]
         num_train = self.X_train.shape[0]
 
