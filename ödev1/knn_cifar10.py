@@ -5,7 +5,6 @@ import pandas as pd
 import urllib.request
 import tarfile
 import pickle
-
 class KNearestNeighbor:
    
     def __init__(self):
